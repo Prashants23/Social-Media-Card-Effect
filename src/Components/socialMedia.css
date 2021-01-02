@@ -1,0 +1,119 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 110vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f9f9f9;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.card {
+  width: 100px;
+  height: 100px;
+  perspective: 1500px;
+  /* position: relative; */
+  display: flex;
+  margin: 25px 50px;
+  cursor: pointer;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s;
+  border-radius: 10px;
+}
+
+.card:first-child .icon {
+  background-color: #80a4ce;
+}
+.card:first-child .icon2 {
+  background-color: #80a4ce;
+}
+.card:nth-child(2) .icon {
+  background-color: #cd486b;
+}
+.card:nth-child(2) .icon2 {
+  background-color: #cd486b;
+}
+.icon .icon2 .image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.icon {
+  display: flex;
+  position: absolute;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+  transform-origin: left;
+  transition: all 0.3s;
+  font-size: 60px;
+  color: #2e5172;
+  width: 100px;
+  height: 100px;
+  border-radius: 5px;
+}
+
+.icon2 {
+  display: flex;
+  position: absolute;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+  transform-origin: right;
+  transition: all 0.3s;
+  font-size: 60px;
+  color: #fcf3f3;
+  width: 100px;
+  height: 100px;
+  background-color: red;
+  border-radius: 5px;
+}
+
+.image {
+  /* background-size: cover; */
+  background-color: yellow;
+  height: inherit;
+  width: inherit;
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  border-radius: 5px;
+}
+
+.card:first-child .image {
+  /* background-color: yellow; */
+  background-image: url("./2fb.jpg");
+  position: absolute;
+}
+
+.card:nth-child(2) .image {
+  /* background-color: yellow; */
+  background-image: url("./2insta.jpg");
+  position: absolute;
+}
+.card:hover .icon {
+  transform: rotateY(-120deg);
+}
+.card:hover .icon2 {
+  transform: rotateY(+120deg);
+}
+.container:hover .card {
+  filter: blur(1px);
+}
+.container .card:hover {
+  filter: blur(0);
+  transform: scale(1.1) rotate(0deg);
+}
